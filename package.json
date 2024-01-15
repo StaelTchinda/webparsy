@@ -39,7 +39,9 @@
     "debug": "^4.1.1",
     "got": "^9.6.0",
     "puppeteer": "2.0.0",
-    "puppeteer-core": "^2.1.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "yaml": "^1.7.2"
   },
   "devDependencies": {

@@ -57,9 +57,12 @@ const init = async (program) => {
 
   let puppeteer
   if (browserOpts.executablePath) {
-    puppeteer = require('puppeteer-core')
-    options.executablePath = browserOpts.executablePath
-    options.userDataDir = browserOpts.userDataDir
+    // puppeteer = require('puppeteer-core')
+    puppeteer = require('puppeteer-extra')
+    for (const pluginName of browserOpts.plugins || []) {
+        const plugin = require(pluginName)
+        puppeteer.use(plugin())
+    }
   }
   else {
     puppeteer = require('puppeteer')
